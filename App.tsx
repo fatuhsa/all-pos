@@ -1,13 +1,15 @@
 import "./global.css";
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ActivityIndicator } from 'react-native';
 import { StatusBar } from 'expo-status-bar';
 import { Navigation } from './src/core/navigation';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useAppMigrations } from './src/hooks/useAppMigrations';
+import LoginScreen from './src/core/screens/LoginScreen';
 
 export default function App() {
   const { isReady, error } = useAppMigrations();
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   if (error) {
     return (
@@ -24,6 +26,15 @@ export default function App() {
         <ActivityIndicator size="large" color="#2563eb" />
         <StatusBar style="auto" />
       </View>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <GestureHandlerRootView style={{ flex: 1 }}>
+        <LoginScreen onLogin={() => setIsAuthenticated(true)} />
+        <StatusBar style="auto" />
+      </GestureHandlerRootView>
     );
   }
 

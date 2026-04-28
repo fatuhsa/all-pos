@@ -6,13 +6,22 @@ import AddProductScreen from '../modules/product/screens/AddProductScreen';
 import SalesScreen from '../modules/sales/screens/SalesScreen';
 import CheckoutScreen from '../modules/sales/screens/CheckoutScreen';
 import { TouchableOpacity, Text, View } from 'react-native';
+import { Ionicons } from '@expo/vector-icons';
+
+import DailyReportScreen from '../modules/report/screens/DailyReportScreen';
+import SettingsScreen from '../modules/settings/screens/SettingsScreen';
 
 const Stack = createStackNavigator();
 
 function DashboardScreen({ navigation }: any) {
   return (
     <View className="flex-1 bg-white p-6 justify-center">
-      <Text className="text-3xl font-black mb-10 text-center text-blue-800">AllPOS Dashboard</Text>
+      <View className="flex-row justify-between items-center mb-10">
+        <Text className="text-3xl font-black text-blue-800">AllPOS</Text>
+        <TouchableOpacity onPress={() => navigation.navigate('Settings')}>
+          <Ionicons name="settings-outline" size={28} color="#374151" />
+        </TouchableOpacity>
+      </View>
       
       <View className="flex-row justify-between mb-4">
         <TouchableOpacity 
@@ -33,10 +42,10 @@ function DashboardScreen({ navigation }: any) {
       </View>
 
       <TouchableOpacity 
-        className="bg-gray-100 p-6 rounded-3xl items-center"
-        onPress={() => alert('Fitur Laporan segera hadir')}
+        className="bg-orange-500 p-6 rounded-3xl items-center"
+        onPress={() => navigation.navigate('DailyReport')}
       >
-        <Text className="text-gray-700 font-bold">Laporan Harian</Text>
+        <Text className="text-white font-bold text-lg">Laporan Hari Ini</Text>
       </TouchableOpacity>
     </View>
   );
@@ -70,6 +79,16 @@ export function Navigation() {
           name="Checkout" 
           component={CheckoutScreen} 
           options={{ title: 'Pembayaran', presentation: 'modal' }}
+        />
+        <Stack.Screen 
+          name="DailyReport" 
+          component={DailyReportScreen} 
+          options={{ title: 'Laporan Penjualan' }}
+        />
+        <Stack.Screen 
+          name="Settings" 
+          component={SettingsScreen} 
+          options={{ title: 'Pengaturan' }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -19,3 +19,8 @@
 [2026-04-28 12:20:00] Created eas.json with 'preview' profile configured to build Android APK.
 [2026-04-28 12:30:00] Created GitHub Actions workflow for automated Android APK builds.
 [2026-04-28 12:45:00] Completed Sales Module: Dashboard, SalesScreen (POS), and Checkout UI with payment method selection.
+[2026-04-28 13:00:00] Linked local repository to https://github.com/fatuhsa/all-pos.git and prepared for push.
+[2026-04-28 13:15:00] Integrated DailyReportScreen into navigation and updated Dashboard.
+[2026-04-28 13:30:00] Implemented Backup & Restore (JSON) and added SettingsScreen.
+[2026-04-28 13:40:00] Implemented PIN-based LoginScreen (default: 1234).
+[2026-04-28 13:50:00] Added Dark Mode support and toggle in SettingsScreen.
