@@ -24,3 +24,5 @@
 [2026-04-28 13:30:00] Implemented Backup & Restore (JSON) and added SettingsScreen.
 [2026-04-28 13:40:00] Implemented PIN-based LoginScreen (default: 1234).
 [2026-04-28 13:50:00] Added Dark Mode support and toggle in SettingsScreen.
+[2026-04-28 14:00:00] Completed Phase 1 MVP. Ready for final APK build on GitHub.
+[2026-04-28 14:10:00] Investigating build failure. Updating app.json for EAS compatibility.
